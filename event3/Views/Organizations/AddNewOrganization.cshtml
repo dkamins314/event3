@@ -1,0 +1,63 @@
+﻿@model event3.ViewModels.AddNewOrganizationViewModel
+
+@{
+    ViewData["Title"] = "AddNewOrganization";
+}
+
+<h1>AddNewOrganization</h1>
+
+<h4>AddNewOrganizationViewModel</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-controller="Organizations" asp-action="Add" method="Post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="NameofOrganization"></label>
+                <input asp-for="NameofOrganization" class="form-control" />
+                <span asp-validation-for="NameofOrganization" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StreetAddressOfOrganization"></label>
+                <input asp-for="StreetAddressOfOrganization" class="form-control" />
+                <span asp-validation-for="StreetAddressOfOrganization" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ZipCode"></label>
+                <input asp-for="ZipCode" class="form-control" />
+                <span asp-validation-for="ZipCode" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="City"></label>
+                <input asp-for="City" class="form-control" />
+                <span asp-validation-for="City" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="State"></label>
+                <input asp-for="State" class="form-control" />
+                <span asp-validation-for="State" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Country"></label>
+                <input asp-for="Country" class="form-control" />
+                <span asp-validation-for="Country" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Phone"></label>
+                <input asp-for="Phone" class="form-control" />
+                <span asp-validation-for="Phone" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Add" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to Schedule</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
