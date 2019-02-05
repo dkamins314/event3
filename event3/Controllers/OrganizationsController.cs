@@ -60,7 +60,7 @@ namespace event3.Controllers
             
             }
 
-            return Redirect("/(addNewOrganizationViewModel)");
+            return Redirect("/(Add)");
         }
     }
 }
