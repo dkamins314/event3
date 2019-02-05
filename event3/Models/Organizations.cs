@@ -11,7 +11,7 @@ namespace event3.Models
         public string ContactName { get; set; }
         public string NameofOrganization { get; set; }
         public string StreetAddressOfOrganization { get; set; }
-        public int ZipCode { get; set; }
+        public string ZipCode { get; set; }
         public string City { get; set; }
         public string State { get; set; }
         public string Country { get; set; }

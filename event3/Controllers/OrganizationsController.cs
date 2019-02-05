@@ -19,7 +19,7 @@ namespace event3.Controllers
         {
             AddNewOrganizationViewModel addNewOrganizationViewModel = new AddNewOrganizationViewModel();
 
-             return Redirect("/(addNewOrganizationViewModel)");
+             return View(addNewOrganizationViewModel);
         }
 
         [HttpPost]
@@ -50,7 +50,7 @@ namespace event3.Controllers
             catch
 
             {
-                return Redirect("/(addNewOrganizationViewModel)");
+                return View("/Add");
             }
 
             {
