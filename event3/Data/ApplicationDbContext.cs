@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using event3.Models;
+using event3.ModelsContact;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using event3.ViewModels;
