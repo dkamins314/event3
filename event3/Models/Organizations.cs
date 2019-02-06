@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace event3.Models
 {
-    public class addNewOrganizationViewModel
+    public class Organization
     {
         public int Id { get; set; }
         public string ContactName { get; set; }

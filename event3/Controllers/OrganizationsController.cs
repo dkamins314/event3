@@ -2,14 +2,25 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using event3.Data;
 using event3.Models;
 using event3.ViewModels;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace event3.Controllers
 {
     public class OrganizationsController : Controller
     {
+
+        private OrganizationDbContext context;
+
+        public OrganizationsController(OrganizationDbContext dbContext)
+        {
+            context = dbContext;
+        }
+
+
         public IActionResult Index()
         {
             return View();
@@ -29,7 +40,7 @@ namespace event3.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    addNewOrganizationViewModel addOrganization = new addNewOrganizationViewModel
+                    Organization addOrganization = new Organization
 
                     {
                         ContactName = addNewOrganizationViewModel.ContactName,

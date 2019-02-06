@@ -9,7 +9,7 @@ using event3.Data;
 
 namespace event3.Data.Migrations
 {
-    [DbContext(typeof(ApplicationDbContext))]
+    [DbContext(typeof(OrganizationDbContext))]
     [Migration("20190204172657_InitialCreate")]
     partial class InitialCreate
     {
