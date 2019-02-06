@@ -17,9 +17,9 @@ namespace event3.Controllers
 
         public IActionResult Add()
         {
-            AddNewOrganizationViewModel addNewOrganizationViewModel = new AddNewOrganizationViewModel();
+            AddNewOrganizationViewModel addOrganization = new AddNewOrganizationViewModel();
 
-             return View(addNewOrganizationViewModel);
+             return View(addOrganization);
         }
 
         [HttpPost]
@@ -29,7 +29,7 @@ namespace event3.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    addNewOrganizationViewModel newOrganization = new addNewOrganizationViewModel
+                    addNewOrganizationViewModel addOrganization = new addNewOrganizationViewModel
 
                     {
                         ContactName = addNewOrganizationViewModel.ContactName,
@@ -42,7 +42,7 @@ namespace event3.Controllers
                         Phone = addNewOrganizationViewModel.Phone
                     };
 
-                    return Redirect("/(Index)");
+                    return Redirect("/Home");
 
                 }
             }
@@ -53,14 +53,12 @@ namespace event3.Controllers
                 return View("/Add");
             }
 
-            {
-                Console.WriteLine("Please complete form" );
+           // {
+           //     Console.WriteLine("Please complete form" );
                 
+          //  }
 
-            
-            }
-
-            return Redirect("/(Add)");
+            return Redirect("/Home");
         }
     }
 }
