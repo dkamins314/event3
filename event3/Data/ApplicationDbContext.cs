@@ -8,12 +8,12 @@ using event3.ViewModels;
 
 namespace event3.Data
 {
-    public class ApplicationDbContext : IdentityDbContext
+    public class OrganizationDbContext : IdentityDbContext
     {
           // properties that we want to persist
           public  DbSet<Organization> Organization { get; set; }
 
-        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
+        public OrganizationDbContext(DbContextOptions<OrganizationDbContext> options)
             : base(options)
         
         {

@@ -2,24 +2,36 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using event3.Data;
 using event3.Models;
 using event3.ViewModels;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace event3.Controllers
 {
     public class OrganizationsController : Controller
     {
+
+        private OrganizationDbContext context;
+
+        public OrganizationsController(OrganizationDbContext dbContext)
+        {
+            context = dbContext;
+        }
+
+
         public IActionResult Index()
         {
-            return View();
+            var organizations = context.Organization.ToList();
+            return View(organizations);
         }
 
         public IActionResult Add()
         {
-            AddNewOrganizationViewModel addNewOrganizationViewModel = new AddNewOrganizationViewModel();
+            AddNewOrganizationViewModel addOrganization = new AddNewOrganizationViewModel();
 
-             return View(addNewOrganizationViewModel);
+             return View(addOrganization);
         }
 
         [HttpPost]
@@ -29,7 +41,7 @@ namespace event3.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    Organization newOrganization = new Organization
+                    Organization addOrganization = new Organization
 
                     {
                         ContactName = addNewOrganizationViewModel.ContactName,
@@ -42,7 +54,7 @@ namespace event3.Controllers
                         Phone = addNewOrganizationViewModel.Phone
                     };
 
-                    return Redirect("/(Index)");
+                    return Redirect("/Home");
 
                 }
             }
@@ -53,12 +65,10 @@ namespace event3.Controllers
                 return View("/Add");
             }
 
-            {
-                Console.WriteLine("Please complete form" );
+           // {
+           //     Console.WriteLine("Please complete form" );
                 
-
-            
-            }
+          //  }
 
             return Redirect("/Home");
         }
