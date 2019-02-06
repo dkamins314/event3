@@ -41,7 +41,7 @@ namespace event3.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    Organization addOrganization = new Organization
+                    addNewOrganizationViewModel newOrganization = new addNewOrganizationViewModel
 
                     {
                         ContactName = addNewOrganizationViewModel.ContactName,
