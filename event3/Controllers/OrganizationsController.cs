@@ -29,7 +29,7 @@ namespace event3.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    addNewOrganizationViewModel newOrganization = new addNewOrganizationViewModel
+                    Organization newOrganization = new Organization
 
                     {
                         ContactName = addNewOrganizationViewModel.ContactName,
@@ -60,7 +60,7 @@ namespace event3.Controllers
             
             }
 
-            return Redirect("/(Add)");
+            return Redirect("/Home");
         }
     }
 }

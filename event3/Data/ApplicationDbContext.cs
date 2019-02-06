@@ -11,7 +11,7 @@ namespace event3.Data
     public class ApplicationDbContext : IdentityDbContext
     {
           // properties that we want to persist
-          public  DbSet<addNewOrganizationViewModel> Organization { get; set; }
+          public  DbSet<Organization> Organization { get; set; }
 
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
@@ -19,6 +19,6 @@ namespace event3.Data
         {
         }
 
-        public DbSet<event3.ViewModels.AddNewOrganizationViewModel> AddNewOrganizationViewModel { get; set; }
+       public DbSet<event3.ViewModels.AddNewOrganizationViewModel> AddNewOrganizationViewModel { get; set; }
     }
 }
