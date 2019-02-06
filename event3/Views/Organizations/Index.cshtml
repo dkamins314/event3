@@ -1,22 +1,35 @@
-﻿
+﻿@model List<event3.Models.Organization>
 @{
     ViewData["Title"] = "Index";
 }
 
-<Organizations</h1>
+<h1>Organizations</h1>
+<table class="table">
 
-<tr>
-    <th>Contact</th>
-    <th>Organization</th>
-    <th>Address</th>
-    <th>Zip Code</th>
-    <th>City</th>
-    <th>State</th>
-    <th>Country</th>
-    <th>Phone</th>
-</tr>
+    <tr>
+        <th>Contact</th>
+        <th>Organization</th>
+        <th>Address</th>
+        <th>Zip Code</th>
+        <th>City</th>
+        <th>State</th>
+        <th>Country</th>
+        <th>Phone</th>
+    </tr>
 
-     @foreach (var organization in Model)
-     {
-         <tr>@organization.Name</tr>
-     }
+    @foreach (var organization in Model)
+    {
+        <tr>@organization.ContactName</tr>
+        <tr>@organization.NameofOrganization</tr>
+        <tr>@organization.StreetAddressOfOrganization</tr>
+        <tr>@organization.ZipCode</tr>
+        <tr>@organization.City</tr>
+        <tr>@organization.State</tr>
+        <tr>@organization.Country</tr>
+        <tr>@organization.Phone</tr>
+    }
+</table>
+@if (Model.Count == 0)
+{
+    <p>No organizations registered at this time</p>
+}

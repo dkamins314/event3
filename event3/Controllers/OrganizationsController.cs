@@ -4,7 +4,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using event3.Data;
 using event3.Models;
-using event3.ModelsContact;
 using event3.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;

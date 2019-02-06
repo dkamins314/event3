@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace event3.ModelsContact
+namespace event3.Models
 {
     public class Organization
     {
